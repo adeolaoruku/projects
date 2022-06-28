@@ -1,0 +1,6 @@
+{
+    "aws-region": "us-east-1",
+    "ami-name": "rhel8-demo",
+    "ec2-instance-type": "t2.micro",
+    "subnet-id": "subnet-8ab990ab"
+}
