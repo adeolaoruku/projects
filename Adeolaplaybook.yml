@@ -1,0 +1,26 @@
+- hosts: Prod
+  become: yes
+  tasks:
+    - name: create a directory
+      file:
+        name: /home/ansible/test
+        state: directory
+        mode: 0755
+        owner: ansible
+        group: ansible
+
+    - name: create a file
+      file:
+        name: /home/ansible/test.txt
+        state: touch
+        mode: 0755
+        owner: ansible
+        group: ansible
+
+    - name: Copy a "test.txt" file to the remote machine for editing
+      copy:
+        src: /home/ansible/test.txt
+        dest: /tmp
+        owner: root
+        group: root
+        remote_src: yes

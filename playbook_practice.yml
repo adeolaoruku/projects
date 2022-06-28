@@ -1,0 +1,21 @@
+---
+  - hosts: Prod
+    become: yes
+
+  - name: Create a directory if it does not exist
+    file:
+      path: /home/ansible/practice
+      state: directory
+      mode: '0775'
+      owner: ansible
+      group: ansible
+
+  - name: Touch the same file, but add/remove some permissions
+    file:
+    path: /home/ansible/practice/guru.txt
+    state: touch
+    mode: u+rw,g-wx,o-rwx
+    owner: ansible
+    group: ansible
+
+   
