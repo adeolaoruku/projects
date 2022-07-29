@@ -1,5 +1,8 @@
- variable "vpc_cidr" {
-    type = string
-    default = "10.1.0.0/16"
+variable "instancetype" {
+  type = string
+  default = "t2.micro"
 }
 
+variable "key_name" {
+  default = "webserver1new_kp"
+}
